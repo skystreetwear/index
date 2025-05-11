@@ -1897,7 +1897,10 @@ Single Product Page
  .quantity input::-webkit-outer-spin-button,
  .quantity input::-webkit-inner-spin-button {
   -webkit-appearance: none;
-  -moz-appearance: none;
+  appearance: none;
+  -webkit-appearance: none; /* Chrome, Safari */
+  -moz-appearance: none;    /* Firefox */
+
   margin: 0; }
   
   .quantity.buttons_added .minus:focus,

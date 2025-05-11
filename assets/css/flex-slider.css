@@ -46,8 +46,11 @@
 }
 .flexslider .slides > li {
   display: none;
+  backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
 }
+
 .flexslider .slides img {
   width: 100%;
   display: block;
@@ -91,8 +94,12 @@ html[xmlns] .flexslider .slides {
 }
 .flexslider .slides img {
   height: auto;
-  -moz-user-select: none;
+  user-select: none;
+  -webkit-user-select: none; /* Safari, Chrome lama */
+  -ms-user-select: none;     /* IE10+ */
+  -moz-user-select: none;    /* Firefox */
 }
+
 .flex-viewport {
   max-height: 2000px;
   -webkit-transition: all 1s ease;
@@ -112,9 +119,7 @@ html[xmlns] .flexslider .slides {
 .carousel li {
   margin-right: 5px;
 }
-.flex-direction-nav {
-  *height: 0;
-}
+
 .flex-direction-nav a {
   text-decoration: none;
   display: block;
@@ -200,17 +205,17 @@ html[xmlns] .flexslider .slides {
   content: '\f003';
 }
 .flex-control-nav {
-  width: 100%;
-  position: absolute;
-  bottom: -40px;
-  text-align: center;
+  display: flex;
+  gap: 12px; /* Gantikan margin antar <li> */
+  justify-content: center; /* Atur posisi: center/space-between/start */
+  align-items: center;
+  flex-wrap: wrap; /* Boleh hilang kalau nggak mau wrap ke bawah */
 }
+
 .flex-control-nav li {
-  margin: 0 6px;
-  display: inline-block;
-  zoom: 1;
-  *display: inline;
+  list-style: none; /* Opsional: hapus bullet kalau perlu */
 }
+
 .flex-control-paging li a {
   width: 11px;
   height: 11px;
@@ -250,15 +255,12 @@ html[xmlns] .flexslider .slides {
   width: 100%;
   height: auto;
   display: block;
-  opacity: .7;
+  opacity: 0.7;
   cursor: pointer;
-  -moz-user-select: none;
-  -webkit-transition: all 1s ease;
-  -moz-transition: all 1s ease;
-  -ms-transition: all 1s ease;
-  -o-transition: all 1s ease;
+  user-select: none;
   transition: all 1s ease;
 }
+
 .flex-control-thumbs img:hover {
   opacity: 1;
 }

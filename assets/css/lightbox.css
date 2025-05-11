@@ -41,13 +41,20 @@ html.lb-disable-scrolling {
 
 .lb-outerContainer {
   position: relative;
-  *zoom: 1;
   width: 250px;
   height: 250px;
   margin: 0 auto;
   border-radius: 4px;
   background-color: white;
 }
+
+/* Clearfix modern */
+.lb-outerContainer::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 
 .lb-outerContainer:after {
   content: "";
@@ -136,11 +143,18 @@ html.lb-disable-scrolling {
 .lb-dataContainer {
   margin: 0 auto;
   padding-top: 5px;
-  *zoom: 1;
   width: 100%;
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
 }
+
+/* Clearfix modern */
+.lb-dataContainer::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 
 .lb-dataContainer:after {
   content: "";
